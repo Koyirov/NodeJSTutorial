@@ -1,1 +1,6 @@
-Hallo Welt, wie geht es dir?
+Name, Anzahl, Preis
+Banane, 65, 15$
+Apfel, 25, 20$
+Kaki, 15, 40$
+Kirsche, 45, 30$
+Birne, 35, 25$
