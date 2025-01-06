@@ -4,11 +4,9 @@ const http = require("http");
 const { math, string } = require("./functionModule");
 
 let result = math(10, 20);
-let strResult = string("Hallo", " Teilnehmer")
+let strResult = string("Hallo", " Welt")
 
 const server = http.createServer((req, res) => {
-    res.write('Ich habe verstanden wirklich!');
-    res.write('\n');
     res.write(result);
     res.write('\n');
     res.write(strResult);
