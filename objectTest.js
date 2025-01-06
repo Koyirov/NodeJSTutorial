@@ -13,5 +13,16 @@ function Person(name, alter) {
     return getPersonInfo();
 }
 
+let bank = [{
+    bankname: "Sparkasse",
+    farbe: "rot",
+    customer_count: 1526,
+    function() {
+        return "Wir sind die Sparkasse";
+    }
+}];
+
+console.log(bank[0].function());
+
 console.log(Person("Simon", 30));
 console.log(Person("Herbert", 56));
