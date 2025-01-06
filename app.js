@@ -11,6 +11,6 @@ const server = http.createServer((req, res) => {
     res.write('\n');
     res.write(strResult);
     res.end();
-})
+});
 
 server.listen(3000);
