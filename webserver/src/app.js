@@ -13,8 +13,14 @@ server.get('/', function (req, res) {
     });
 })
 
-server.post('/profil', function (req, res) {
-    res.send('Moinsen User')
+server.get('/profil', function (req, res) {
+    res.send('Moinsen User');
+})
+
+server.get('/profil/:userId', function (req, res) {
+    const { userId } = req.params;
+    console.log(userId);
+    res.send('Moinsen User ' + userId);
 })
 
 
