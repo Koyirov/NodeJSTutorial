@@ -22,8 +22,14 @@ function ConstCreditCard(color, height, balance, owner, transferoption){
         console.log(this.owner + " kann Geld vom Konto abheben: " + this.balance);
     };
     this.transfer = transferoption;
+    this.kunde = {
+        name: "Hebert",
+        nachname: "Nachname",
+        alter: 27,
+    }
 }
 
 let creditCard = new ConstCreditCard('weiß', 36, 4986, "Simon", geldeinzahlen);
 
 creditCard.transfer();
+console.log(creditCard.kunde);
