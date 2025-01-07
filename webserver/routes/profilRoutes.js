@@ -16,3 +16,13 @@ profilRoutes.get(':userId', function (req, res) {
     console.log(userId);
     res.send('Moinsen User ' + userId);
 })
+
+profilRoutes.route("/userdata").get((req, res) => {
+    res.send('Wurde angefragt');
+}).post((req, res) => {
+    res.send('Wurde angefragt');
+}).put((req, res) => {
+    res.send('Wurde angefragt');
+}).delete((req, res) => {
+    res.send('Wurde angefragt');
+});
