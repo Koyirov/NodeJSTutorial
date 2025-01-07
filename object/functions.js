@@ -1,4 +1,11 @@
 
+function FactKunde(name, nachname, alter){
+    return {
+        name: name,
+        nachname: nachname,
+        alter: alter
+    }
+}
 
 function geldeinzahlen() {
     console.log("Es wurde Geld eingezahlt!");
@@ -22,11 +29,7 @@ function ConstCreditCard(color, height, balance, owner, transferoption){
         console.log(this.owner + " kann Geld vom Konto abheben: " + this.balance);
     };
     this.transfer = transferoption;
-    this.kunde = {
-        name: "Hebert",
-        nachname: "Nachname",
-        alter: 27,
-    }
+    this.kunde = FactKunde("Hebert", "Mustermann", 45)
 }
 
 let creditCard = new ConstCreditCard('weiß', 36, 4986, "Simon", geldeinzahlen);
