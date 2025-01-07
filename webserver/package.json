@@ -1,0 +1,17 @@
+{
+  "name": "webserver",
+  "version": "1.0.0",
+  "description": "a simple web server",
+  "main": "src",
+  "scripts": {
+    "start": "node .",
+    "test": "npm run test"
+  },
+  "author": "max mustermann",
+  "license": "ISC",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}
