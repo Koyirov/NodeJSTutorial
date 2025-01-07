@@ -1,27 +1,8 @@
 "use strict"
 import { server, PORT } from "./server";
+import { profilRoutes } from "../routes/profilRoutes";
 
-server.get('/', function (req, res) {
-    res.json({
-        name: "Max",
-        alter: 36,
-        geburtsort: "USA",
-        besitz: {
-            auto: "VW-Golg",
-            buch: "Bla"
-        }
-    });
-})
-
-server.get('/profil', function (req, res) {
-    res.send('Moinsen User');
-})
-
-server.get('/profil/:userId', function (req, res) {
-    const { userId } = req.params;
-    console.log(userId);
-    res.send('Moinsen User ' + userId);
-})
+server.use(profilRoutes);
 
 
 // 404 error handling
