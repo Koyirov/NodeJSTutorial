@@ -5,7 +5,7 @@ server.get('/', function (req, res) {
     res.send('Hello World')
 })
 
-server.get('/profil', function (req, res) {
+server.post('/profil', function (req, res) {
     res.send('Moinsen User')
 })
 
