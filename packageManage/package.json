@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/Koyirov/NodeJSTutorial/issues"
   },
-  "homepage": "https://github.com/Koyirov/NodeJSTutorial#readme"
+  "homepage": "https://github.com/Koyirov/NodeJSTutorial#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
