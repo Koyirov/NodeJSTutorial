@@ -4,6 +4,7 @@
   "description": "a simple web server",
   "main": "src",
   "scripts": {
+    "dev": "nodemon .",
     "start": "node .",
     "test": "npm run test"
   },
