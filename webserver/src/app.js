@@ -2,7 +2,11 @@
 import { server, PORT } from "./server";
 import { profilRoutes } from "../routes/profilRoutes";
 
-server.use(profilRoutes);
+server.get("/", (req, res) => {
+    res.send("Hallo Welt");
+})
+
+server.use('/profil', profilRoutes);
 
 
 // 404 error handling
