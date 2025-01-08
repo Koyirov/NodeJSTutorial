@@ -2,15 +2,18 @@
 
 // Server settings
 import { server, PORT } from "./server";
+import MainLayouts from "express-ejs-layouts";
 // Profil routes
 import { profilRoutes } from "../routes/profilRoutes";
 
 // Template engine
+server.use(MainLayouts);
+server.set("layout", "layouts/html");
 server.set("view engine", "ejs");
 
 // routen
 server.get("/", (req, res) => {
-    res.render("index", {
+    res.render("main/index", {
         name: "Simone",
         nachname: "Müüüüller"
     });
