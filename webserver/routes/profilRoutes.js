@@ -24,8 +24,6 @@ profilRoutes.route("/userdata").get((req, res) => {
         title: 'User Data',
     });
 }).post((req, res) => {
-
-    console.log(req.body);
     res.send("wurde geschickt");
 }).put((req, res) => {
     res.send("wurde geupdated");
