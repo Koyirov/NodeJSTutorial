@@ -16,7 +16,7 @@ server.use(express.static("views/publics"));
 //Middlewares
 server.use(express.urlencoded({ extended: true }));
 
-server.use(Logger);
+// server.use(Logger);
 
 // Template engine
 server.use(MainLayouts);
@@ -24,7 +24,7 @@ server.set("layout", "layouts/html");
 server.set("view engine", "ejs");
 
 // routen
-server.get("/", (req, res) => {
+server.get("/", Logger, (req, res, next) => {
     res.render("main/index", {
         title: "Index",
         name: "Simone",
