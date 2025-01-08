@@ -14,6 +14,7 @@ server.set("view engine", "ejs");
 // routen
 server.get("/", (req, res) => {
     res.render("main/index", {
+        title: "Index",
         name: "Simone",
         nachname: "Müüüüller"
     });
