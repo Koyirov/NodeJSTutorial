@@ -20,22 +20,15 @@ profilRoutes.get(':userId', function (req, res) {
 
 profilRoutes.route("/userdata").get((req, res) => {
     res.render('main/userdata', {
-        layout: "layouts/htmlThree",
+        layout: "layouts/userdataHTML",
         title: 'User Data',
     });
 }).post((req, res) => {
-    res.render('main/userdata', {
-        layout: "layouts/htmlThree",
-        title: 'User Data',
-    });
+
+    console.log(req.body);
+    res.send("wurde geschickt");
 }).put((req, res) => {
-    res.render('main/userdata', {
-        layout: "layouts/htmlThree",
-        title: 'User Data',
-    });
+    res.send("wurde geupdated");
 }).delete((req, res) => {
-    res.render('main/userdata', {
-        layout: "layouts/htmlThree",
-        title: 'User Data',
-    });
+    res.send("wurde gelöscht");
 });

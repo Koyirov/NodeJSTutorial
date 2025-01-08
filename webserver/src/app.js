@@ -10,6 +10,9 @@ import express from "express";
 //Statische Files
 server.use(express.static("views/publics"));
 
+//Middlewares
+server.use(express.urlencoded({ extended: true }));
+
 // Template engine
 server.use(MainLayouts);
 server.set("layout", "layouts/html");
