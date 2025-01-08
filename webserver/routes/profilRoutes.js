@@ -19,11 +19,23 @@ profilRoutes.get(':userId', function (req, res) {
 })
 
 profilRoutes.route("/userdata").get((req, res) => {
-    res.send('Wurde angefragt');
+    res.render('main/userdata', {
+        layout: "layouts/htmlThree",
+        title: 'User Data',
+    });
 }).post((req, res) => {
-    res.send('Wurde angefragt');
+    res.render('main/userdata', {
+        layout: "layouts/htmlThree",
+        title: 'User Data',
+    });
 }).put((req, res) => {
-    res.send('Wurde angefragt');
+    res.render('main/userdata', {
+        layout: "layouts/htmlThree",
+        title: 'User Data',
+    });
 }).delete((req, res) => {
-    res.send('Wurde angefragt');
+    res.render('main/userdata', {
+        layout: "layouts/htmlThree",
+        title: 'User Data',
+    });
 });
