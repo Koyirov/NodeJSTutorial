@@ -6,6 +6,7 @@ export let profilRoutes = express.Router();
 // http://localhost:3000/profil?name=Simon&alter=37
 profilRoutes.get('/', function (req, res) {
     res.render('main/profil', {
+        layout: "layouts/htmlTwo",
         title: 'Profil Page',
     });
 })
