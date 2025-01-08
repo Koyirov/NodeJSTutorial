@@ -11,6 +11,7 @@
   "author": "max mustermann",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.10",
     "esm": "^3.2.25",
     "express": "^4.21.2",
     "nodemon": "^3.1.9"

@@ -1,9 +1,19 @@
 "use strict"
+
+// Server settings
 import { server, PORT } from "./server";
+// Profil routes
 import { profilRoutes } from "../routes/profilRoutes";
 
+// Template engine
+server.set("view engine", "ejs");
+
+// routen
 server.get("/", (req, res) => {
-    res.send("Hallo Welt");
+    res.render("index", {
+        name: "Simone",
+        nachname: "Müüüüller"
+    });
 })
 
 server.use('/profil', profilRoutes);
