@@ -5,6 +5,10 @@ import { server, PORT } from "./server";
 import MainLayouts from "express-ejs-layouts";
 // Profil routes
 import { profilRoutes } from "../routes/profilRoutes";
+import express from "express";
+
+//Statische Files
+server.use(express.static("views/publics"));
 
 // Template engine
 server.use(MainLayouts);
