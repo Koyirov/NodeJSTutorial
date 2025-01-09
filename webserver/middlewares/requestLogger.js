@@ -25,6 +25,7 @@ export function requestLogger(req, res, next){
                 let fileData = JSON.parse(resOfReadFile.toString());
                 let logObjects = [fileData.logs[0]];
 
+
                 let newLog = { datum: new Date, url: req.originalUrl };
                 logObjects.push(newLog);
 
@@ -36,7 +37,7 @@ export function requestLogger(req, res, next){
             try{
 
                 let newData = {
-                    log: [resOfReadFile]
+                    logs: [resOfReadFile]
                 };
 
                 writeFile(JSON.stringify(newData));
