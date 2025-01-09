@@ -9,6 +9,7 @@ import express from "express";
 
 //import Middlewares
 import { Logger } from "../middlewares/logger";
+import { requestLogger } from "../middlewares/requestLogger"
 
 //Statische Files
 server.use(express.static("views/publics"));
@@ -24,7 +25,7 @@ server.set("layout", "layouts/html");
 server.set("view engine", "ejs");
 
 // routen
-server.get("/", Logger, (req, res, next) => {
+server.get("/", Logger, requestLogger, (req, res, next) => {
     res.render("main/index", {
         title: "Index",
         name: "Simone",
