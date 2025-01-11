@@ -15,13 +15,6 @@ import { requestLogger } from "../middlewares/requestLogger"
 import { db }  from "../database/db";
 import {booksRoutes} from "../routes/booksRoute";
 
-db.query(
-    'SELECT * FROM `books`',
-    function (err, results, fields) {
-        console.log('HI: ' + results); // results contains raws returned by server
-    }
-);
-
 //Statische Files
 server.use(express.static("views/publics"));
 
@@ -35,6 +28,14 @@ server.use(requestLogger);
 server.use(MainLayouts);
 server.set("layout", "layouts/html");
 server.set("view engine", "ejs");
+
+
+db.query(
+    'SELECT * FROM `books`',
+    function (err, results, fields) {
+        console.log(results); // results contains raws returned by server
+    }
+);
 
 // routen
 server.get("/", Logger, (req, res, next) => {

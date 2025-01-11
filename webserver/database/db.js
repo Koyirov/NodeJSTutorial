@@ -5,7 +5,8 @@ export const db = mysql.createConnection({
     host: "localhost",
     user: "testuser",
     password: "123456",
-    database: "nodejscourse",
+    port: 3306,
+    database: "nodejscource",
 })
 
 module.exports  = db.promise();
