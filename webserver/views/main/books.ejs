@@ -3,3 +3,22 @@
 <% locals.books.forEach(element => { %>
     <p><%- element.title %></p>
 <% }) %>
+<br>
+<br>
+<br>
+
+
+<h3>Bücher hinzufügen</h3>
+<form action="/books" method="post">
+    <label for="title">Buchtitel</label>
+    <input id="title" type="text" name="title" placeholder="Buchtitel">
+    <br>
+    <label for="author">Author</label>
+    <input id="author" type="text" name="author" placeholder="Author">
+    <br>
+    <br>
+    <button type="submit" value="sendet">Buch hinzufügen</button>
+</form>
+<br>
+<br>
+<br>

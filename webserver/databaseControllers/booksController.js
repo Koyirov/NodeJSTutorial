@@ -16,3 +16,13 @@ exports.getBooks = async (req, res, next) => {
     }
 }
 
+exports.addBooks = async (req, res, next) => {
+    try {
+        let formdata = req.body;
+        console.log(formdata);
+        res.redirect("/books");
+    } catch (err) {
+        console.log("Ein Fehler aufgetreten: " + err);
+    }
+}
+
