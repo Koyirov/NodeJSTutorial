@@ -12,9 +12,31 @@ class Books {
         return db.query(stmt)
     }
 
-    static addBooks() {
-        let stmt = `INSERT INTO books (title, author, price)`;
-        return db.query(stmt)
+    addBook() {
+        // let stmt = `INSERT INTO books(
+        //           title,
+        //           author,
+        //           price)
+        // VALUES(
+        //        '${this.title}',
+        //        '${this.author}',
+        //        '${this.price}',
+        //       )`;
+
+        let stmt = `INSERT INTO books(
+                     'id', 
+                     'title', 
+                     'price', 
+                     'author') 
+        VALUES (
+           NULL, 
+           '${this.title}', 
+           '${this.price}', 
+           '${this.author}'
+        )`;
+
+        const addBook = db.execute(stmt);
+        return addBook;
     }
 }
 

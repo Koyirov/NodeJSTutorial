@@ -19,8 +19,12 @@ exports.getBooks = async (req, res, next) => {
 exports.addBooks = async (req, res, next) => {
     try {
         let formdata = req.body;
-        console.log(formdata);
+
+        let book = new Books(formdata.title, formdata.author, 4.99);
+        book.addBook();
+
         res.redirect("/books");
+        next();
     } catch (err) {
         console.log("Ein Fehler aufgetreten: " + err);
     }
