@@ -1,24 +1,16 @@
 import express from "express";
-// Database
-import { db }  from "../database/db";
+import booksController from "../databaseControllers/booksController";
 
+// Middlewares
+// import { Logger } from "../middlewares/logger";
+import { requestLogger } from "../middlewares/requestLogger";
+
+// Controllers
 export let booksRoutes = express.Router();
 
 
 
-booksRoutes.route("/").get((req, res) => {
-    db.query(
-        'SELECT * FROM `books`',
-        function (err, results, fields) {
-            //console.log(results); // results contains raws returned by server
-
-            res.render('main/books', {
-                layout: "layouts/booksHTML",
-                title: "Bücher",
-                books: results,
-            });
-        }
-    );
+booksRoutes.route("/").get(booksController.getBooks, requestLogger, (req, res) => {
 
 }).post((req, res) => {
     res.send("wurde geschickt");

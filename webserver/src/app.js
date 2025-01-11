@@ -7,18 +7,13 @@ import MainLayouts from "express-ejs-layouts";
 import { profilRoutes } from "../routes/profilRoutes";
 import express from "express";
 
-//import Middlewares
-import { Logger } from "../middlewares/logger";
-import { requestLogger } from "../middlewares/requestLogger"
-
-import {booksRoutes} from "../routes/booksRoute";
+import { booksRoutes } from "../routes/booksRoute";
 
 //Statische Files
 server.use(express.static("views/publics"));
 
 //Middlewares
 server.use(express.urlencoded({ extended: true }));
-server.use(requestLogger);
 
 // server.use(Logger);
 
@@ -29,7 +24,7 @@ server.set("view engine", "ejs");
 
 
 // routen
-server.get("/", Logger, (req, res, next) => {
+server.get("/",  (req, res, next) => {
     res.render("main/index", {
         title: "Index",
         name: "Simone",
