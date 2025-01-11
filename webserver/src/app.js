@@ -11,6 +11,17 @@ import express from "express";
 import { Logger } from "../middlewares/logger";
 import { requestLogger } from "../middlewares/requestLogger"
 
+// Database
+import { db }  from "../database/db";
+import {booksRoutes} from "../routes/booksRoute";
+
+db.query(
+    'SELECT * FROM `books`',
+    function (err, results, fields) {
+        console.log('HI: ' + results); // results contains raws returned by server
+    }
+);
+
 //Statische Files
 server.use(express.static("views/publics"));
 
@@ -35,6 +46,8 @@ server.get("/", Logger, (req, res, next) => {
 })
 
 server.use('/profil', profilRoutes);
+
+server.use('/books', booksRoutes);
 
 
 // 404 error handling
