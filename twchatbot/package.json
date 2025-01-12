@@ -1,7 +1,7 @@
 {
   "name": "twchatbot",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src",
   "scripts": {
     "dev": "nodemon .",
     "node": "node .",
