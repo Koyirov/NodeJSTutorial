@@ -13,8 +13,7 @@ export let booksRoutes = express.Router();
 booksRoutes.route("/")
     .get(booksController.getBooks, requestLogger, (req, res) => {})
     .post(booksController.addBooks, requestLogger, (req, res) => {})
-    .put((req, res) => {
-    res.send("wurde geupdated");
-}).delete((req, res) => {
+    .put(booksController.updateBooks, requestLogger, (req, res) => {})
+    .delete((req, res) => {
     res.send("wurde gelöscht");
 });

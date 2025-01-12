@@ -30,3 +30,21 @@ exports.addBooks = async (req, res, next) => {
     }
 }
 
+exports.updateBooks = async (req, res, next) => {
+   try {
+       let formdata = req.headers;
+
+       if(formdata.author === undefined || formdata.title === undefined){
+           res.json("author & title is required");
+       }else{
+           await Books.updateBook(formdata.author, formdata.title);
+
+           res.json("Update erfolgreich!");
+           // res.redirect("/books");
+           next();
+       }
+   }  catch (err) {
+       console.log("Ein Fehler aufgetreten: " + err);
+   }
+}
+

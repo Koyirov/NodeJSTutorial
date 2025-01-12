@@ -19,6 +19,10 @@ class Books {
         const addBook = db.execute(stmt);
         return addBook;
     }
+
+    static updateBook(author, title) {
+        db.execute(`UPDATE books SET author = ? WHERE title = ?`, [author, title]);
+    }
 }
 
 module.exports = Books
