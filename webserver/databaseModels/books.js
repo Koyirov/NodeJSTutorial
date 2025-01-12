@@ -23,6 +23,10 @@ class Books {
     static updateBook(author, title) {
         db.execute(`UPDATE books SET author = ? WHERE title = ?`, [author, title]);
     }
+
+    static deleteBook(title) {
+        db.execute(`DELETE FROM books WHERE title = ?`, [title])
+    }
 }
 
 module.exports = Books

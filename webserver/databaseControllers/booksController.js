@@ -48,3 +48,21 @@ exports.updateBooks = async (req, res, next) => {
    }
 }
 
+exports.deleteBook = async (req, res, next) => {
+    try {
+        let formdata = req.headers;
+
+        if(formdata.title === undefined){
+            res.json("title is required");
+        }else{
+            await Books.deleteBook(formdata.title);
+
+            res.json("Delete erfolgreich!");
+            // res.redirect("/books");
+            next();
+        }
+    }  catch (err) {
+        console.log("Ein Fehler aufgetreten: " + err);
+    }
+}
+
