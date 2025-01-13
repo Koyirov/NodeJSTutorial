@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script
+          src="https://code.jquery.com/jquery-3.7.1.js"
+          integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+          crossorigin="anonymous">
+
+  </script>
+  <title>Events</title>
+  <style>
+    * {
+      font-family: sans-serif;
+    }
+    .cube {
+      width: 150px;
+      height: 150px;
+      background-color: #a8d3a1;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+<h1>Events</h1>
+
+<button id="reset" type="button"><a href="">Reset</a></button>
+<button id="start" type="button">Start</button>
+<button id="stop" type="button">Stop</button>
+<br>
+<br>
+<br>
+<div id="color" class="cube"></div>
+
+<script type="text/javascript">
+  "use strict"
+  $(function () {
+
+    $("#stop").on("click", function (){
+      // clearQueue, jumpToEnd
+      $("#color").stop(true, false).fadeOut("slow").fadeIn("slow");
+    });
+
+    $("#start").on("click", function (){
+      $("#color").animate({
+        opacity: 0.25,
+        left: "300px",
+        // height: "toggle"
+      }, 4000, /* Callback Function */ function (){
+        // Animation fertig
+        window.location.reload();
+      });
+    });
+
+  });
+</script>
+</body>
+</html>
