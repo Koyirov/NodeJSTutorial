@@ -17,15 +17,15 @@
       width: 150px;
       height: 150px;
       background-color: #a8d3a1;
+      position: relative;
     }
   </style>
 </head>
 <body>
 <h1>Events</h1>
 
-<button id="hide" type="button">Hide</button>
-<button id="show" type="button">Show</button>
-<button id="toggle" type="button">Toggle</button>
+<button id="reset" type="button"><a href="">Reset</a></button>
+<button id="start" type="button">Start</button>
 <br>
 <br>
 <br>
@@ -35,16 +35,15 @@
   "use strict"
   $(function () {
 
-    $("#hide").on("click", function (){
-      $("#color").slideUp(2000);
-    });
-
-    $("#show").on("click", function (){
-      $("#color").slideDown('slow');
-    });
-
-    $("#toggle").on("click", function (){
-      $("#color").slideToggle(2000);
+    $("#start").on("click", function (){
+      $("#color").animate({
+        opacity: 0.25,
+        left: "300px",
+        height: "toggle"
+      }, 4000, function (){
+        // Animation fertig
+        window.location.reload();
+      });
     });
 
   });
