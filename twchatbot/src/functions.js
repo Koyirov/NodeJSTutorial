@@ -1,5 +1,4 @@
 import {
-    ANSWERS,
     BROADCAST_CHANNEL,
     CHAT_TRIGGER,
 } from "./constants";
@@ -14,8 +13,8 @@ export function answer(client, message){
     let msg = "";
 
     CHAT_TRIGGER.forEach((element, index) => {
-        if (message === element){
-            msg = ANSWERS[index];
+        if (message === element.trigger){
+            msg = element.answer;
             SEND_MESSAGE(client, msg);
         }
     });
