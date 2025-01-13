@@ -1,3 +1,4 @@
 /packageManage/node_modules
 /webserver/node_modules
 /twchatbot/node_modules
+/twchatbot/.env

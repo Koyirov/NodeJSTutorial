@@ -10,6 +10,11 @@ MAIN_CLIENT.connect();
 
 MAIN_CLIENT.on("message", (channel, userstate, message, self) => {
 
+    console.log('MY ENV IS: ' + process.env.CHANNEL);
+    console.log('MY ENV IS: ' + process.env.USER);
+    console.log('MY ENV IS: ' + process.env.PASSWORD);
+
+
     if(self) return;
 
     switch(userstate["message-type"]) {
