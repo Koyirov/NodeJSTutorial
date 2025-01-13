@@ -1,4 +1,4 @@
-import {MAIN_CLIENT} from "./clients";
+import { MAIN_CLIENT } from "./clients";
 
 // Functions
 import { answer } from "./functions";

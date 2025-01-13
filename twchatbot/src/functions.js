@@ -1,13 +1,7 @@
 import {
+    ANSWERS,
     BROADCAST_CHANNEL,
-    DISCORD_ANSWER,
-    DISCORD_TRIGGERS,
-    INSTA_ANSWER,
-    INSTA_TRIGGERS,
-    TIKTOK_ANSWER,
-    TIKTOK_TRIGGERS,
-    TWITTER_ANSWER,
-    TWITTER_TRIGGERS
+    CHAT_TRIGGER,
 } from "./constants";
 
 
@@ -19,14 +13,10 @@ export function answer(client, message){
 
     let msg = "";
 
-    if (message === DISCORD_TRIGGERS){
-        msg = DISCORD_ANSWER;
-    } else if(message === TWITTER_TRIGGERS){
-        msg = TWITTER_ANSWER;
-    } else if(message === INSTA_TRIGGERS){
-        msg = INSTA_ANSWER;
-    } else if(message === TIKTOK_TRIGGERS){
-        msg = TIKTOK_ANSWER;
-    }
-    SEND_MESSAGE(client, msg);
+    CHAT_TRIGGER.forEach((element, index) => {
+        if (message === element){
+            msg = ANSWERS[index];
+            SEND_MESSAGE(client, msg);
+        }
+    });
 }
