@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+            crossorigin="anonymous">
+
+    </script>
+    <title>Auslesen Ändern</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+<h1>Auslesen Ändern</h1>
+
+<button id="text" type="button">Text auslesen</button>
+<button id="html" type="button">HTML auslesen</button>
+<button id="attr" type="button">Attribut auslesen</button>
+<br>
+<p id="inhalt"><b>Hey</b> Ich bin ein <i>Paragraph</i></p>
+<br>
+<br>
+<input id="input" type="text" name="postinput">
+<button id="post" type="submit">Post</button>
+
+<script type="text/javascript">
+    "use strict"
+    $(function () {
+
+        //Text auslesen
+        $('#text').on('click', function (){
+            alert($('#inhalt').text());
+        });
+
+        //HTML auslesen
+        $('#html').on('click', function (){
+            alert($('#inhalt').html());
+        });
+
+        // Value auslesen
+        $('#post').on('click', function (){
+            alert($('#input').val());
+        });
+
+        // Attribute auslesen
+        $('#attr').on('click', function (){
+            alert($('#input').attr("name"));
+        });
+    });
+</script>
+</body>
+</html>
