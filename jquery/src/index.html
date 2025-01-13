@@ -27,7 +27,7 @@
 <br>
 <br>
 <br>
-<div id="color"></div>
+<div id="color" class="cube"></div>
 <p></p>
 
 
@@ -35,15 +35,32 @@
 
     "use strict"
 
+    $(function (){
+        //Alles auswählen
+        $("*")
+
+        //Element-Tags
+        $("h1")
+        $("div")
+        $("p")
+
+        //ID
+        $("#color")
+
+        //Klasse
+        $(".cube")
+
+    })
+
     // Veraltetet Methode
     // $(document).ready(() => {
     //     $("p").text("Das Dom ist geladen und kann nun geändert werden");
     // })
 
     // Neu Methode
-    $(function (){
-        $("p").text("Das Dom ist geladen und kann nun geändert werden (Neu)");
-    })
+    // $(function (){
+    //     $("p").text("Das Dom ist geladen und kann nun geändert werden (Neu)");
+    // })
 
 </script>
 </body>
