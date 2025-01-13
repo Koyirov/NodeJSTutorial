@@ -1,7 +1,7 @@
 import {MAIN_CLIENT} from "./clients";
 
 // Functions
-import { getMessage } from "./functions";
+import { answer } from "./functions";
 
 // Triggers
 import { DISCORD_TRIGGERS } from "./constants";
@@ -18,7 +18,7 @@ MAIN_CLIENT.on("message", (channel, userstate, message, self) => {
             break;
         case "chat":
             if (message === DISCORD_TRIGGERS){
-                getMessage(message);
+                answer(MAIN_CLIENT);
             }
             break;
         case "whisper":
