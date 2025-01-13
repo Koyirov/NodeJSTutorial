@@ -2,9 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+            crossorigin="anonymous">
+
+    </script>
+    <title>Events</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+        .cube {
+            width: 150px;
+            height: 150px;
+            background-color: #a8d3a1;
+        }
+    </style>
 </head>
 <body>
+<h1>Events</h1>
 
+<button id="hide" type="button">Hide</button>
+<button id="show" type="button">Show</button>
+<button id="toggle" type="button">Toggle</button>
+<br>
+<br>
+<br>
+<div id="color" class="cube"></div>
+
+<script type="text/javascript">
+    "use strict"
+    $(function () {
+
+        $("#hide").on("click", function (){
+            $("#color").hide();
+        });
+
+        $("#show").on("click", function (){
+            $("#color").show();
+        });
+
+        $("#toggle").on("click", function (){
+            $("#color").toggle();
+        });
+
+    });
+</script>
 </body>
 </html>
