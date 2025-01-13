@@ -1,5 +1,11 @@
 import {MAIN_CLIENT} from "./clients";
 
+// Functions
+import { getMessage } from "./functions";
+
+// Triggers
+import { DISCORD_TRIGGERS } from "./constants";
+
 MAIN_CLIENT.connect();
 
 MAIN_CLIENT.on("message", (channel, userstate, message, self) => {
@@ -11,7 +17,9 @@ MAIN_CLIENT.on("message", (channel, userstate, message, self) => {
             // Do something
             break;
         case "chat":
-            console.log(message);
+            if (message === DISCORD_TRIGGERS){
+                getMessage(message);
+            }
             break;
         case "whisper":
             // Do something
