@@ -4,16 +4,11 @@ import {MAIN_CLIENT} from "./clients";
 import { answer } from "./functions";
 
 // Triggers
-import { DISCORD_TRIGGERS } from "./constants";
+import { BOT_PREFIX } from "./constants";
 
 MAIN_CLIENT.connect();
 
 MAIN_CLIENT.on("message", (channel, userstate, message, self) => {
-
-    console.log('MY ENV IS: ' + process.env.CHANNEL);
-    console.log('MY ENV IS: ' + process.env.USER);
-    console.log('MY ENV IS: ' + process.env.PASSWORD);
-
 
     if(self) return;
 
@@ -22,8 +17,9 @@ MAIN_CLIENT.on("message", (channel, userstate, message, self) => {
             // Do something
             break;
         case "chat":
-            if (message === DISCORD_TRIGGERS){
-                answer(MAIN_CLIENT);
+            // Wenn Nachricht mit Ausrufezeichen beginnt
+            if (message.charAt(0) === BOT_PREFIX){
+                answer(MAIN_CLIENT, message);
             }
             break;
         case "whisper":
