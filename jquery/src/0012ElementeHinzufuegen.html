@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script
+          src="https://code.jquery.com/jquery-3.7.1.js"
+          integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+          crossorigin="anonymous">
+
+  </script>
+  <title>Elemente hinzufügen</title>
+  <style>
+    * {
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+<h1>Elemente hinzufügen</h1>
+
+<p id="or">Ich bin eine Orientierung</p>
+
+
+<script type="text/javascript">
+  "use strict"
+  $(function () {
+
+    let element = $('#or');
+
+    element.prepend("<h2>Ich bin eine h2 Überschrift</h2>");
+    element.append("<h3>Ich bin eine h3 Überschrift</h3>");
+    element.before("<h6>Ich bin eine h6 Überschrift</h6>");
+    element.after("<h6>Ich bin eine h6 Überschrift</h6>");
+
+  });
+</script>
+</body>
+</html>
