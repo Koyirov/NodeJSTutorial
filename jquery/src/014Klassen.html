@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script
+          src="https://code.jquery.com/jquery-3.7.1.js"
+          integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+          crossorigin="anonymous">
+
+  </script>
+  <title>Elemente entfernen</title>
+  <style>
+    * {
+      font-family: sans-serif;
+    }
+
+    .one {
+      font-size: xx-large;
+      background-color: #f6d8b3;
+    }
+  </style>
+</head>
+<body>
+<h1>Elemente entfernen</h1>
+
+<h3 id="el1"> Ich diene zur Unterhaltung</h3>
+
+<button id="addc">Add Class</button>
+<button id="removec">Remove Class</button>
+<button id="togglec">Toggle Class</button>
+
+<script type="text/javascript">
+  "use strict"
+  $(function () {
+
+    $('#addc').on('click', function (){
+      $('#el1').addClass('one');
+    });
+
+    $('#removec').on('click', function (){
+      $('#el1').removeClass('one');
+    });
+
+    $('#togglec').on('click', function (){
+      $('#el1').toggleClass('one');
+    });
+
+  });
+</script>
+</body>
+</html>
