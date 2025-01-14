@@ -24,9 +24,14 @@
 <br>
 <p id="inhalt"><b>Hey</b> Ich bin ein <i>Paragraph</i></p>
 <br>
-<br>
 <input id="input" type="text" name="postinput">
 <button id="post" type="submit">Post</button>
+<br>
+<h1><b>Ändern</b></h1>
+<button id="set-text" type="button">Text ändern</button>
+<button id="set-html" type="button">HTML ändern</button>
+<button id="set-attr" type="button">Attribut ändern</button>
+<button id="set-post" type="submit">Set-Post-Value</button>
 
 <script type="text/javascript">
     "use strict"
@@ -50,6 +55,28 @@
         // Attribute auslesen
         $('#attr').on('click', function (){
             alert($('#input').attr("name"));
+        });
+
+
+
+        //Text auslesen
+        $('#set-text').on('click', function (){
+            $('#inhalt').text("Ich bin ein neuer Paragraph");
+        });
+
+        //HTML auslesen
+        $('#set-html').on('click', function (){
+            $('#inhalt').html("<b><i>Ich bin ein neuer Paragraph</i></b>");
+        });
+
+        // Value auslesen
+        $('#set-post').on('click', function (){
+            $('#input').val("Mein Post Value");
+        });
+
+        // Attribute auslesen
+        $('#set-attr').on('click', function (){
+            $('#input').attr("name", "neuerpostInput");
         });
     });
 </script>
