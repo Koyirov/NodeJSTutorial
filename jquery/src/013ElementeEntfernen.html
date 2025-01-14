@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script
+          src="https://code.jquery.com/jquery-3.7.1.js"
+          integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+          crossorigin="anonymous">
+
+  </script>
+  <title>Elemente entfernen</title>
+  <style>
+    * {
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+<h1>Elemente entfernen</h1>
+
+<p id="el1">Ich bin eine Orientierung 1</p>
+<p id="el2">Ich bin eine Orientierung 2</p>
+<p id="el3" class="filter">Ich bin eine Orientierung 3</p>
+<p id="el4" class="filter">Ich bin eine Orientierung 4</p>
+<button id="filter">Delete</button>
+
+<script type="text/javascript">
+  "use strict"
+  $(function () {
+
+    $('#el1').on('click', function (){
+      $(this).remove();
+    });
+
+    $('#el2').on('click', function (){
+      $(this).empty();
+    });
+
+    $('#filter').on('click', function (){
+      $('p').remove('.filter');
+    });
+
+  });
+</script>
+</body>
+</html>
